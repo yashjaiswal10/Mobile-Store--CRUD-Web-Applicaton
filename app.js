@@ -55,3 +55,4 @@ app.use(commentRoutes);
 // app.listen(1000,function(){
 //     console.log("Server Ready");
 // });
+app.listen(process.env.PORT || 1000)
