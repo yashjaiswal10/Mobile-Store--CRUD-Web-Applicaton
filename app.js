@@ -52,6 +52,6 @@ app.use(indexRoutes);
 app.use(mobilesRoutes);
 app.use(commentRoutes);
 
-app.listen(1000,function(){
-    console.log("Server Ready");
-});
+// app.listen(1000,function(){
+//     console.log("Server Ready");
+// });
