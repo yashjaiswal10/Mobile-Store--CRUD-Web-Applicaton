@@ -1,0 +1,32 @@
+
+<%include header.ejs%>
+
+<link rel="stylesheet" type="text/css" href="app.css">
+
+<div class="container">
+ <header class="jumbotron">
+    <div class="container">
+       <h1>Welcome To Mobile Store</h1>
+       <p>We provide you the list of all mobiles in the world</p>
+        <!--<div><h1><%=currentUser%></h1></div>-->
+        <a class="btn btn-primary btn-large" href="/mobiles/new">Add New Mobile</a>
+    </div>
+ </header>
+    <div class="row" style="display:flex;flex-wrap: wrap">
+        <%for(var i=0;i<mobile.length;i++){ %>
+        <div class="col-md-3 col-sm-6">
+
+            <div class="thumbnail">
+              <img src="<%=mobile[i].image %>">
+            </div>
+             <div class="caption">
+                 <h3><%= mobile[i].name %></h3>
+             </div>
+            <div>
+                <a href="/mobiles/<%=mobile[i]._id%>" class="btn btn-primary">More Info</a>
+            </div>
+        </div>
+<%}%>
+    </div>
+</div>
+<%include footer.ejs%>

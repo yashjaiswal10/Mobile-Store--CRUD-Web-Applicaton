@@ -1,0 +1,58 @@
+<%include header.ejs%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Mobile Store</p>
+            <div class="list-group">
+            <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+
+                <li class="list-group-item">Info 3</li>
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="image-responsive" src="../<%=mobile.image%>">
+                <div class="caption-full">
+                    <h4><a><%=mobile.name%></a></h4>
+                    <p><%=mobile.description%></p>
+                    <p><em>Submitted by-<b><%=mobile.author.username%></b></em></p>
+                </div>
+            </div>
+            <div class="well">
+                <h3>Comments</h3>
+
+
+                <div class="text-right">
+                    <a style="margin-top: -50px" class="btn btn-success" href="/mobiles/<%=mobile._id%>/comments/new">Add New Comment</a>
+
+                </div>
+                <% mobile.comments.forEach(function(Comment){%>
+                <div style="margin-top: 10px" class="row">
+               <div class="col-md-12">
+                   <b><%=Comment.author%></b>
+                    <span class="pull-right">10 days ago</span>
+                   <p>
+                       <%=Comment.text%>
+                   </p>
+               </div>
+               </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div style="margin-left: 5px">
+
+
+
+</div>
+<%include footer.ejs%>

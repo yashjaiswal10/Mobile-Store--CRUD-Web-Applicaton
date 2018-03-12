@@ -1,0 +1,27 @@
+<%include header.ejs%>
+<div class="container">
+    <div class="row">
+ <h1 style="text-align: center">Add a New Phone</h1>
+        <div style="width:30%;margin:20px auto">
+           <form action="/mobiles" method="Post">
+             <div class="form-group">
+              <input class="form-control" name="name" type ="text" placeholder="Mobilename">
+             </div>
+             <div class="form-group">
+              <input class="form-control" name="image" type ="text" placeholder="image url">
+             </div>
+               <div class="form-group">
+                   <input class="form-control" name="description" type ="text" placeholder="description">
+               </div>
+             <div class="form-group">
+              <button class="btn btn-large btn-primary btn-block"> Submit</button>
+             </div>
+
+
+           </form>
+            <a href="/mobiles">Go Back</a>
+        </div>
+
+</div>
+</div>
+<%include footer.ejs%>
