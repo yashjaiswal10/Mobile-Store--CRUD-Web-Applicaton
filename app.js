@@ -17,7 +17,8 @@ var mobilesRoutes=require("./routes/mobiles");
 var indexRoutes=require("./routes/index");
 
 // mongoose.Promise=global.Promise;
-mongoose.connect("mongodb://localhost/mobilestore");
+
+mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore");
 // mongoose.connect('mongodb://10.7.0.3:27107/data/mobilestore');
 
 app.use(flash());
