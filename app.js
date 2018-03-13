@@ -52,6 +52,4 @@ app.use(indexRoutes);
 app.use(mobilesRoutes);
 app.use(commentRoutes);
 
-app.listen(1000,function(){
-    console.log("Server Ready");
-});
+app.set('port', process.env.PORT || 1000);
