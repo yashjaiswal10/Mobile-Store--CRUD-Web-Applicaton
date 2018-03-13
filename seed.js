@@ -41,8 +41,28 @@ function seedDB(){
             mobile.create(seed,function(err,mobile){
                 if(err)
                     console.log(err);
-                else
+                else {
                     console.log("Mobile added");
+                    Comment.create(
+                        {
+                            text:"abcdefgj",
+                            author:"yash"
+                        },function (err,comment) {
+                            if(err)
+                                console.log(err);
+                            else
+                            {
+                                mobile.comments.push(comment);
+                                mobile.save();
+
+                                console.log(mobile.comments+"fuuuuuu");
+
+                            }
+
+                        }
+                    )
+                }
+
 
             });
         });

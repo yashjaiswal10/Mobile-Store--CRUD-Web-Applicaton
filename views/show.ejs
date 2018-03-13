@@ -28,13 +28,15 @@
                     <a style="margin-top: -50px" class="btn btn-success" href="/mobiles/<%=mobile._id%>/comments/new">Add New Comment</a>
 
                 </div>
-                <% mobile.comments.forEach(function(Comment){%>
+
+
+                <% mobile.comments.forEach(function(comment){%>
                 <div style="margin-top: 10px" class="row">
                <div class="col-md-12">
-                   <b><%=Comment.author%></b>
+                   <b><%=comment.author%></b>
                     <span class="pull-right">10 days ago</span>
                    <p>
-                       <%=Comment.text%>
+                       <%=comment.text%>
                    </p>
                </div>
                </div>

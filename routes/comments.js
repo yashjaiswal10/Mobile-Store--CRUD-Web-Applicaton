@@ -16,7 +16,7 @@ router.get("/mobiles/:id/comments/new",isLoggedIn,function(req,res){
         if(err)
             console.log(err);
         else
-            res.render("comments/new1.ejs",{mobile:mobile});
+            res.render("../views/comments/new1.ejs",{mobile:mobile});
     });
 
 });
@@ -34,8 +34,8 @@ router.post("/mobiles/:id/comments",function (req,res) {
             Comment.create(req.body.comment,function(err,comment){
                 mobile.comments.push(comment);
                 mobile.save();
-                console.log(mobile.comments+"fuuuuuu");
-                res.render("show.ejs",{mobile:mobile});
+                console.log(mobile.comments+"fuuuuudd");
+                // res.render("../views/show.ejs",{mobile:mobile});
 
                 res.redirect("/mobiles/"+mobile._id);
             });
