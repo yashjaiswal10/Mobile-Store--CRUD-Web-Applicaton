@@ -42,6 +42,8 @@ router.post("/mobiles",function (req,res) {
     var newmobile = {name: name, image: image, description: desc,author:author};
     // var newmobiles={name:name,image:image};
     // mobile.push(newmobiles);
+    //body parser no db
+
     mobile.create(newmobile, function (err, newlymobile) {
         if (err) {
             console.log(err);
