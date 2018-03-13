@@ -52,4 +52,4 @@ app.use(indexRoutes);
 app.use(mobilesRoutes);
 app.use(commentRoutes);
 
-app.set('port', process.env.PORT || 1000);
+app.listen(process.env.PORT || 1000)
