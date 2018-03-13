@@ -40,8 +40,8 @@ router.post("/mobiles",function (req,res) {
         username:req.user.username
     }
     var newmobile = {name: name, image: image, description: desc,author:author};
-    var newmobiles={name:name,image:image};
-    mobiles.push(newmobiles);
+    // var newmobiles={name:name,image:image};
+    // mobile.push(newmobiles);
     mobile.create(newmobile, function (err, newlymobile) {
         if (err) {
             console.log(err);
