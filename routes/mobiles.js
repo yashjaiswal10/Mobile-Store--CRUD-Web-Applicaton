@@ -1,4 +1,5 @@
 var seedDB=require("../seed");
+var methodOverride=require("method-override");
 
 var express=require("express");
 var router=express.Router();
@@ -92,6 +93,46 @@ router.post("/mobiles",function (req,res) {
         });
 
     });
-    module.exports=router;
+
+
+router.get("/mobiles/:id/edit",function (req,res) {if(req.isAuthenticated()){
+    mobile.findById(req.params.id,function(err,found)
+    {
+        if(err){
+            res.redirect("/mobiles");
+        }
+        else
+        {if(found.author.username==req.user.username){
+            res.render("edit.ejs",{mobile:found});}else{console.log(found.author.username);console.log(req.user.username);
+            res.redirect("/mobiles/"+req.params.id);
+        }}
+    });
+}
+else{res.redirect("/login");
+}
+});
+
+router.post("/mobiles/:id",function (req,res) {
+    mobile.findByIdAndUpdate(req.params.id,req.body.mobile,function (err,update) {
+        if(err){
+            res.redirect("/mobiles");
+        }
+        else{
+            res.redirect("/mobiles/"+req.params.id);
+        }
+    })
+
+});
+router.post("/mobiles/:id/delete",function(req,res){
+    mobile.findByIdAndRemove(req.params.id,function (err) {
+        if(err){
+            res.redirect("/mobiles");
+        }
+        else{
+console.log("fffkl");
+            res.redirect("/mobiles");        }
+    })});
+
+module.exports=router;
 
 

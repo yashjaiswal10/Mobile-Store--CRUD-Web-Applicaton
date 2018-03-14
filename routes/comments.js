@@ -42,6 +42,9 @@ router.post("/mobiles/:id/comments",function (req,res) {
         }
     });
 
-})
+});
+
+
+
 
 module.exports=router;

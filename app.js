@@ -6,6 +6,7 @@ var mobile=require("./models/mobile");
 var seedDB=require("./seed");
 var Comment=require("./models/comment");
 var flash=require("connect-flash");
+var methodOverride=require("method-override");
 var mongoose=require("mongoose");
 var passport=require("passport");
 var LocalStrategy=require("passport-local");
@@ -18,7 +19,7 @@ var indexRoutes=require("./routes/index");
 
 // mongoose.Promise=global.Promise;
 mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore");
-// mongoose.connect('mongodb://10.7.0.3:27107/data/mobilestore');
+// mongoose.connect('mongodb://localhost/data/mobilestore');
 // mongoose.Promise = require('bluebird');
 // assert.equal(query.exec().constructor, require('bluebird'));
 app.use(flash());
@@ -29,7 +30,7 @@ var currentUser;
 
 seedDB();
 
-
+app.use(methodOverride("_method)"));
 
 app.use(require("express-session")({
     secret:"Redmi Note 4 is the best",

@@ -1,5 +1,7 @@
 <%include header.ejs%>
+<a href="/mobiles" >Back to Store</a>
 <div class="container">
+
     <div class="row">
         <div class="col-md-3">
             <p class="lead">Mobile Store</p>
@@ -18,9 +20,17 @@
 
 
                 <div class="caption-full">
-                    <h4><a><%=mobile.name%></a></h4>
+                    <h3><a><%=mobile.name%></a></h3>
                     <p><%=mobile.description%></p>
                     <p><em>Submitted by-<b><%=mobile.author.username%></b></em></p>
+                   <% if(currentUser&& mobile.author.username==currentUser.username){%>
+                    <a class="btn btn-warning" href="/mobiles/<%=mobile._id%>/edit">Edit</a>
+
+                    <form style="display:inline" action="/mobiles/<%=mobile._id%>/delete?_method=DELETE" method="Post">
+                        <button  class="btn btn-danger">Delete</button>
+                    </form>
+                    <%}%>
+
                 </div>
             </div>
             <div class="well">
