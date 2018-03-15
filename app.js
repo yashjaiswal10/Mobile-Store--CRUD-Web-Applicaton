@@ -22,7 +22,8 @@ mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestor
 // mongoose.connect('mongodb://localhost/data/mobilestore');
 // mongoose.Promise = require('bluebird');
 // assert.equal(query.exec().constructor, require('bluebird'));
-app.use(flash());
+
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.static("design"));
@@ -48,6 +49,7 @@ app.use(function (req,res,next) {
     res.locals.currentUser=req.user;
     next();
 });
+app.use(flash());
 
 app.use(indexRoutes);
 app.use(mobilesRoutes);

@@ -1,7 +1,19 @@
 var express=require("express");
 var router=express.Router();
+var flash=require("connect-flash");
+
 var User=require("../models/user");
 var passport=require("passport");
+
+//middleware
+function isLoggedIn(req,res,next){
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    req.flash("error", "please login first!");
+    res.redirect("/login");
+}
+
 
 //root route
 router.get("/",function(req,res){
@@ -34,7 +46,8 @@ router.post("/register",function (req,res) {
 });
 //login
 router.get("/login",function(req,res){
-    res.render("login.ejs");
+    console.log(req.flash("error"));
+    res.render("login.ejs",{message: req.flash("error")});
 });
 
 // app.post("/login", middleware,callback)
@@ -55,12 +68,5 @@ router.get("/logout",function (req,res) {
 
 });
 
-//middleware
-function isLoggedIn(req,res,next){
-    if(req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");
-}
 
 module.exports=router;
