@@ -34,6 +34,11 @@ router.post("/mobiles/:id/comments",function (req,res) {
         else
         {
             Comment.create(req.body.comment,function(err,comment){
+               console.log(req.user.username+"fg")
+                comment.author.id=req.user._id;
+                comment.author.username=req.user.username;
+                comment.save();
+                console.log(comment.author.username+"fgead")      ;
                 mobile.comments.push(comment);
                 mobile.save();
                 console.log(mobile.comments+"fuuuuudd");

@@ -45,8 +45,12 @@ function seedDB(){
                     console.log("Mobile added");
                     Comment.create(
                         {
-                            text:"abcdefgj",
-                            author:"yash"
+                            text:"Very Good Phone",
+                            author: {
+                                username:"yash"
+
+                            }
+
                         },function (err,comment) {
                             if(err)
                                 console.log(err);

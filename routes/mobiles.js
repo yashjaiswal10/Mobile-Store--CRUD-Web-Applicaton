@@ -67,7 +67,7 @@ router.post("/mobiles",function (req,res) {
                 console.log("ooo");
             else
             { console.log(req.params.comments);
-                // Comment.create(
+                             // Comment.create(
                 //     {
                 //         text:"This is the most selling phone",
                 //         author:"Yash"
