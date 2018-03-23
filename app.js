@@ -18,8 +18,8 @@ var mobilesRoutes=require("./routes/mobiles");
 var indexRoutes=require("./routes/index");
 
 // mongoose.Promise=global.Promise;
-mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore");
-// mongoose.connect('mongodb://localhost/data/mobilestore');
+// mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore");
+mongoose.connect('mongodb://localhost/data/mobilestore');
 // mongoose.Promise = require('bluebird');
 // assert.equal(query.exec().constructor, require('bluebird'));
 
