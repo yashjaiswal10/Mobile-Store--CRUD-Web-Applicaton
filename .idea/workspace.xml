@@ -90,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/seed.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
-              <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+              <caret line="20" column="112" lean-forward="false" selection-start-line="20" selection-start-column="112" selection-end-line="20" selection-end-column="112" />
               <folding />
             </state>
           </provider>
@@ -305,12 +305,12 @@
       <workItem from="1521048916795" duration="5454000" />
       <workItem from="1521144242636" duration="174000" />
       <workItem from="1521213741177" duration="8490000" />
-      <workItem from="1521784543491" duration="452000" />
+      <workItem from="1521784543491" duration="809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134551000" />
+    <option name="totallyTimeSpent" value="134908000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -735,7 +735,7 @@
     <entry file="file://$PROJECT_DIR$/seed.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
-          <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+          <caret line="20" column="112" lean-forward="false" selection-start-line="20" selection-start-column="112" selection-end-line="20" selection-end-column="112" />
           <folding />
         </state>
       </provider>
