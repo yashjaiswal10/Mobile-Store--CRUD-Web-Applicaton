@@ -18,8 +18,8 @@ var mobilesRoutes=require("./routes/mobiles");
 var indexRoutes=require("./routes/index");
 
 // mongoose.Promise=global.Promise;
-mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore");
-// mongoose.connect('mongodb://localhost/mobilestore');
+mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore",{ useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/mobilestore',{ useNewUrlParser: true });
 // mongoose.Promise = require('bluebird');
 // assert.equal(query.exec().constructor, require('bluebird'));
 
@@ -50,6 +50,7 @@ app.use(function (req,res,next) {
     next();
 });
 app.use(flash());
+// app.use('/', express.static('public',{extensions: ['htm', 'html']}));
 
 app.use(indexRoutes);
 app.use(mobilesRoutes);

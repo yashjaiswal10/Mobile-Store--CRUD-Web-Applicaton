@@ -61,12 +61,13 @@ router.post("/mobiles",function (req,res) {
     router.get("/mobiles/new",isLoggedIn,function (req,res) {
         res.render("new.ejs");
     });
-    router.get("/mobiles/:id",function (req,res) {
+    router.get("/mobiles/:id",isLoggedIn,function (req,res) {
         mobile.findById(req.params.id).populate("comments").exec(function (err,mobile) {
             if(err)
                 console.log("ooo");
             else
-            { console.log(req.params.comments);
+            { 
+                console.log("comments-"+mobile.comments);
                              // Comment.create(
                 //     {
                 //         text:"This is the most selling phone",
@@ -83,7 +84,7 @@ router.post("/mobiles",function (req,res) {
                             res.render("show.ejs",{mobile:mobile});
                 //             // console.log(comment);
                 //         }
-                console.log(mobile+"kkj");
+                // console.log(mobile+"kkj");
                     // }
                 // );
 

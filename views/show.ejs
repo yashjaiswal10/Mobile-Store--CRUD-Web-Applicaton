@@ -1,4 +1,4 @@
-<%include header.ejs%>
+<%- include ('./header') %>
 <a href="/mobiles" >Back to Store</a>
 <div class="container">
     <div class="row">
@@ -45,11 +45,13 @@
                 <% mobile.comments.forEach(function(comment){%>
                 <div style="margin-top: 10px" class="row">
                <div class="col-md-12">
-                   <b><%=comment.author.username%></b>
-                    <span class="pull-right">10 days ago</span>
+
+                    <!-- <span class="pull-right">10 days ago</span> -->
                    <p>
                        <%=comment.text%>
-                   </p>
+                   <br>
+                   <b>Commented by-<%=comment.author.username%></b>
+                </p>
                    <% if(currentUser&& comment.author.username==currentUser.username){%>
                    <a class="btn btn-warning" href="/mobiles/<%=mobile._id%>/comments/<%=comment._id%>/edit">Edit</a>
               <form  style="display: inline" action="/mobiles/<%=mobile._id%>/comments/<%=comment._id%>/delete" method="post">
@@ -76,4 +78,4 @@
 
 
 </div>
-<%include footer.ejs%>
+<%- include ('./footer') %>

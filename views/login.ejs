@@ -1,4 +1,4 @@
-<%include header.ejs%>
+<%- include ('./header') %>
 <h1><%=message%></h1>
 
 <div class="container">
@@ -18,10 +18,12 @@
 
 
             </form>
-            <a style="margin-left: 120px" href="/mobiles">Go Back</a>
-            <span style="margin-left: 80px" ><br>New User-</span><a style="margin-left:2px" href="/register">Signup</a>
+            <div style="margin-left: 30%">
+            <a  href="/mobiles">Go Back</a>
+            <span style="margin-left: 5%" >New User-</span><a style="margin-left:2px" href="/register">Signup</a>
         </div>
+    </div>
 
     </div>
 </div>
-<%include footer.ejs%>
+<%- include ('./footer') %>
