@@ -16,7 +16,7 @@ var User=require("./models/user");
 var commentRoutes=require("./routes/comments");
 var mobilesRoutes=require("./routes/mobiles");
 var indexRoutes=require("./routes/index");
-
+ 
 // mongoose.Promise=global.Promise;
 mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore",{ useNewUrlParser: true });
 // mongoose.connect('mongodb://localhost/mobilestore',{ useNewUrlParser: true });
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("design"));
 var currentUser;
 
-seedDB();
+// seedDB();
 
 app.use(methodOverride("_method)"));
 
