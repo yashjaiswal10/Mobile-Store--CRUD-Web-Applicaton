@@ -6,3 +6,13 @@ h1{
 
 }
 
+.flex-wrap {
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail .caption-full {
+    padding: 9px;
+}
+/* .container .text-muted {
+    margin: 20px 0;
+  } */

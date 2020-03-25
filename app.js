@@ -19,6 +19,8 @@ var indexRoutes=require("./routes/index");
  
 // mongoose.Promise=global.Promise;
 mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore",{ useNewUrlParser: true });
+// mongoose.connect("mongodb://Mehul Bhutalia:mehul@02@ds035617.mlab.com:35617/yelpcamp",{ useNewUrlParser: true });
+
 // mongoose.connect('mongodb://localhost/mobilestore',{ useNewUrlParser: true });
 // mongoose.Promise = require('bluebird');
 // assert.equal(query.exec().constructor, require('bluebird'));
