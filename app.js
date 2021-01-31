@@ -18,9 +18,27 @@ var mobilesRoutes=require("./routes/mobiles");
 var indexRoutes=require("./routes/index");
  
 // mongoose.Promise=global.Promise;
-mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore",{ useNewUrlParser: true });
+// mongoose.connect("mongodb://Yash Jaiswal:1234@ds123146.mlab.com:23146/mobilestore",{ useNewUrlParser: true });
 
-// mongoose.connect("mongodb+srv://yash:<1234>@cluster0.9dc2m.mongodb.net/mobilestore?retryWrites=true&w=majority",{ useNewUrlParser: true });
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://yash:1234@cluster0.9dc2m.mongodb.net/mobilestore?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+// //   const collection = client.db("mobilestore").collection("mobile");
+// //   // perform actions on the collection object
+// //   client.close();
+// });
+
+
+mongoose.connect("mongodb+srv://yash:1234@cluster0.9dc2m.mongodb.net/mobilestore?retryWrites=true&w=majority"
+    ,
+    {
+    useNewUrlParser: true ,
+    useUnifiedTopology:true
+   }
+);
+const db=mongoose.connection;
+db.once("open",()=>{console.log("server started")});
 
 // mongoose.connect('mongodb://localhost/mobilestore',{ useNewUrlParser: true });
 // mongoose.Promise = require('bluebird');
